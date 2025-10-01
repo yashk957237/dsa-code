@@ -32,7 +32,6 @@ public class BestTimeToBuySellStock {
                 buyPrice = prices[i];
             }
         }
-
         // Return the maximum profit possible
         return maxProfit;
     }
