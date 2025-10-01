@@ -1,3 +1,5 @@
+// contributed by Tushar Kumar [https://github.com/Tusharkumar200]
+
 package Arrays;
 
 import java.util.HashSet;
