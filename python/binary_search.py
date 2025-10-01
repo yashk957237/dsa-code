@@ -20,14 +20,12 @@ def binary_search(arr, target):
     return -1
 
 if __name__ == '--main__':
-    vector<int> arr = {2, 4, 5, 9, 16, 20, 50, 65}
-    int target = input("Enter the number as target to be searched:")
+    arr = {2, 4, 5, 9, 16, 20, 50, 65, 70}
+    target = input("Enter the number as target to be searched:")
 
-    int result = binary_search(arr, target)
+    result = binary_search( arr, target)
 
     if result != -1:
         print("Element found at index:", result)
     else:
         print("Element not found in the array")
-
-    return 0
