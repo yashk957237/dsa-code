@@ -17,7 +17,7 @@ void findDuplicates(vector<int>& nums) {
     }
 
     if (!hasDuplicate) {
-        cout << "None";
+        cout << "none";
     }
     cout << endl;
 }
