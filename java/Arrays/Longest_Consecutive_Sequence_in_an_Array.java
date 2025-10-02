@@ -1,4 +1,5 @@
-// contributed by Tushar Kumar [https://github.com/Tusharkumar200]
+// contributed by Tushar Kumar 
+// GitHub - https://github.com/Tusharkumar200
 
 package Arrays;
 
