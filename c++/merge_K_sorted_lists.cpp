@@ -1,4 +1,19 @@
-#include<bits/stdc++.h>
+/*
+ * Problem: Merge K Sorted Linked Lists
+ * 
+ * Description:
+ * - Given K sorted linked lists, merge them into a single sorted linked list
+ * - Each linked list is sorted in ascending order
+ * 
+ * Solution Approach:
+ * 1. Uses divide and conquer strategy
+ * 2. Repeatedly merges pairs of lists until only one list remains
+ * 3. mergeTwo() function handles merging of two sorted lists
+ * 4. Time Complexity: O(N * log K) where N is total nodes and K is number of lists
+ * 5. Space Complexity: O(1) as we're reusing existing nodes
+ */
+
+#include <bits/stdc++.h>
 using namespace std;
 struct ListNode{
     int val;
