@@ -108,26 +108,38 @@ int main()
     vector<vector<int>> a(n, vector<int>(n));
     for (int i = 0; i < n; i++)
     {
+        string s;
+        cin >> s;
         for (int j = 0; j < n; j++)
-        {
-            char c;
-            cin >> c;
-            a[i][j] = (c == '*');
-        }
+            a[i][j] = (s[j] == '*');
     }
     SegTree2D st(n, n);
     st.build_x(0, 0, n - 1, a);
-    // Exactly q queries: each line "x1 x2 y1 y2"
+
     while (q--)
     {
-        int x1, x2, y1, y2;
-        cin >> x1 >> y1 >> x2 >> y2;
-        // to 0-based inclusive
-        --x1;
-        --x2;
-        --y1;
-        --y2;
-        cout << st.query_x(0, 0, n - 1, x1, x2, y1, y2) << "\n";
+        int type;
+        cin >> type;
+        if (type == 1)
+        {
+            // toggle at (x, y)
+            int x, y;
+            cin >> x >> y;
+            --x;
+            --y;
+            a[x][y] = 1 - a[x][y]; // flip
+            st.update_x(0, 0, n - 1, x, y, a[x][y]);
+        }
+        else if (type == 2)
+        {
+            int x1, y1, x2, y2;
+            cin >> x1 >> y1 >> x2 >> y2;
+            --x1;
+            --y1;
+            --x2;
+            --y2;
+            cout << st.query_x(0, 0, n - 1, x1, x2, y1, y2) << "\n";
+        }
     }
     return 0;
 }
