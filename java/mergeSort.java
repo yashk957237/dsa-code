@@ -5,7 +5,7 @@ import java.util.Scanner;
  * A class containing the implementation of the Merge Sort algorithm.
  */
 public class MergeSort {
-    
+
     /**
      * The main method that sorts an array using the merge sort algorithm.
      *
