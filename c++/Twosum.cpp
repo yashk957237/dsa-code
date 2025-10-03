@@ -72,50 +72,52 @@ public:
 
         for(int i = 0;i<n;i++){
             int complement = target - nums[i];
-            if(mp.find(complement) != mp.end()){
-                return {mp[complement], i};
+            if(map.find(complement) != map.end()){
+                return {map[complement],i};
             }
-            mp[nums[i]] = i;
+            map[nums[i]] = i;
+        }
+        return {}; */
 
-        unordered_map<int,int> m;
-        for(int i=0;i<nums.size();i++){
-            int x=target-nums[i];
-            if(m.count(x)) return {m[x],i};
-            m[nums[i]]=i;
+
+
+        vector<int> ans;
+        unordered_map<int,int> map;
+        int n = nums.size();
+
+        for(int i = 0;i<n;i++){
+            map[nums[i]] = i;
+        }
+
+        for(int i = 0;i<n;i++){
+            int complement = target - nums[i];
+            if(map.find(complement) != map.end() && map[complement] != i /* edge case */){
+                ans.push_back(map[complement]);
+                ans.push_back(i);
+                return ans;
+            }
 
         }
-        return {};
+        return ans;
     }
 };
 
-int main() {
-
-    int n, target;
-    cout << "Enter number of elements: ";
-    cin >> n;
-
-    vector<int> nums(n);
-    cout << "Enter elements: ";
-    for(int i=0; i<n; i++) cin >> nums[i];
-
-    cout << "Enter target: ";
-    cin >> target;
-
+int main(){
     Solution sol;
-    vector<int> ans = sol.twoSum(nums, target);
-
-    if(!ans.empty()){
-        cout << "Indices: " << ans[0] << " " << ans[1] << endl;
-    } else {
-        cout << "No solution found!" << endl;
+    int n;
+    cin>>n;
+    vector<int> nums(n);
+    for(int i = 0;i<n;i++){
+        cin>>nums[i];
     }
-
+    int target;
+    cin>>target;
+    vector<int> result = sol.twoSum(nums,target);
+    cout<<"[";
+    for(int i = 0;i<result.size();i++){
+        cout<<result[i]<<",";
+    }
+    cout<<"]"<<endl;
     return 0;
-
-    Solution s;
-    vector<int> nums={2,7,11,15};
-    int target=9;
-    vector<int> ans=s.twoSum(nums,target);
-    for(int i:ans) cout<<i<<" ";
-
 }
+
