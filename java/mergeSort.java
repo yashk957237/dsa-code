@@ -1,3 +1,9 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+/**
+ * A class containing the implementation of the Merge Sort algorithm.
+ */
 public class MergeSort {
     
     // Function to merge two subarrays

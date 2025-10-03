@@ -1,13 +1,8 @@
-def is_palindrome(text):
-    # Normalize by converting to lowercase and removing spaces/punctuation
-    clean_text = ''.join(filter(str.isalnum, text)).lower()
-    
-    # Check if the reversed string equals the original
-    return clean_text == clean_text[::-1]
+#Palindrome Check
 
-# Example
-word1 = "A man, a plan, a canal: Panama"
-word2 = "hello world"
+def is_palindrome(s):
+    return s == s[::-1]
 
-print(f"'{word1}' is palindrome: {is_palindrome(word1)}")
-print(f"'{word2}' is palindrome: {is_palindrome(word2)}")
+# Example usage
+word = "racecar"
+print(word, "is palindrome?", is_palindrome(word))  # Output: True
