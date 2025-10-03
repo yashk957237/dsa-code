@@ -1,3 +1,6 @@
+// Larry's Array problem (HackerRank)
+// approach - count inversions, check if even (YES) or odd (NO)
+
 #include <bits/stdc++.h>
 using namespace std;
 
