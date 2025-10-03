@@ -1,6 +1,6 @@
-# This script contains various examples of linked list operations and other functions.
+# I Make Change In Code In Easy Ways
 
-# 1. Code (link_list_Sum.py)
+# 1. Code ( link list _Sum.py )
 
 class Node:
     def __init__(self, data):
@@ -20,7 +20,8 @@ head.next = Node(10)
 head.next.next = Node(15)
 print("Linked List Sum:", sum_linked_list(head))
 
-# 2. Code (half_linklist.py)
+
+# 2. Code ( half- linklist.py )
 
 def print_half(head):
     slow, fast = head, head
@@ -34,7 +35,8 @@ head = Node(1); head.next = Node(2); head.next.next = Node(3)
 head.next.next.next = Node(4); head.next.next.next.next = Node(5)
 print_half(head)  # prints 1 -> 2 -> END
 
-# 3. Code (helloWorld.py)
+
+# 3. Code ( helloWorld.py )
 
 def hello_world():
     codes = [72,101,108,108,111,32,87,111,114,108,100]
@@ -42,7 +44,8 @@ def hello_world():
 
 print(hello_world())
 
-# 4. Code (Sum_of_1d_arrays.py)
+
+# 4. Code ( Sum of 1d arrays.py )
 
 def sum_array(arr):
     total = 0
