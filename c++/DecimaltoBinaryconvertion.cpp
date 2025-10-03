@@ -18,6 +18,6 @@ string decimaToBinary(int num)
 int main()
 {
     int num = 11;
-    cout << "decima To Binary : " << decimaToBinary(num) << endl;
+    cout << "Decima To Binary : " << decimaToBinary(num) << endl;
     return 0;
 }
