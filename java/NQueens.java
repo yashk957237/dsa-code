@@ -1,58 +1,68 @@
-import java.util.ArrayList;
-import java.util.List;
+public class NQueens {
+    static int N = 8; // You can change this for different N
 
-public class NQueens{
-    public static void main(String[] args) {
-        int n = 4;
-        System.out.println(solveNQueens(n));
-    }
-    public static List<List<String>> solveNQueens(int n) {
-        List<List<String>> ans = new ArrayList<>();
-        List<String> board = new ArrayList<>();
-        StringBuilder s = new StringBuilder();
-        for(int i=0;i<n;i++){
-            s.append('.');
+    // Function to print the board
+    static void printBoard(int board[][]) {
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++)
+                System.out.print((board[i][j] == 1 ? "Q " : ". "));
+            System.out.println();
         }
-        for(int i= 0;i<n;i++){
-            board.add(s.toString());
-        } 
-        solve(0,board,ans,n);
-        return ans;
+        System.out.println();
     }
-    public static void solve(int col,List<String> board,List<List<String>> ans,int n){
-        if(col==n){
-            ans.add(new ArrayList<>(board));
-            return;
+
+    // Check if queen can be placed
+    static boolean isSafe(int board[][], int row, int col) {
+        int i, j;
+
+        // Check this row on left
+        for (i = 0; i < col; i++)
+            if (board[row][i] == 1)
+                return false;
+
+        // Check upper diagonal
+        for (i = row, j = col; i >= 0 && j >= 0; i--, j--)
+            if (board[i][j] == 1)
+                return false;
+
+        // Check lower diagonal
+        for (i = row, j = col; i < N && j >= 0; i++, j--)
+            if (board[i][j] == 1)
+                return false;
+
+        return true;
+    }
+
+    // Solve using backtracking
+    static boolean solveNQUtil(int board[][], int col) {
+        if (col >= N) {
+            printBoard(board);
+            return true;
         }
 
-        for(int row = 0;row<n;row++){
-            if(isSafe(row,col,board,n)){
-               StringBuilder temprow = new StringBuilder(board.get(row));
-                temprow.setCharAt(col, 'Q');
-                board.set(row, temprow.toString());
-                solve(col+1,board,ans,n);
-                temprow.setCharAt(col, '.');
-                board.set(row, temprow.toString());
+        boolean res = false;
+        for (int i = 0; i < N; i++) {
+            if (isSafe(board, i, col)) {
+                board[i][col] = 1;
+
+                // Recursion
+                res = solveNQUtil(board, col + 1) || res;
+
+                // Backtrack
+                board[i][col] = 0;
             }
         }
+        return res;
     }
-    public static boolean isSafe(int row,int col,List<String> board ,int n){
-        int temprow = row;
-        int tempcol = col;
 
-        while(row>=0 && col>=0){
-            if(board.get(row--).charAt(col--)=='Q') return false;
+    static void solveNQ() {
+        int board[][] = new int[N][N];
+        if (!solveNQUtil(board, 0)) {
+            System.out.println("Solution does not exist");
         }
-        row=temprow;
-        col=tempcol;
-        while(col>=0){
-            if(board.get(row).charAt(col--)=='Q') return false;
-        }
-        row=temprow;
-        col=tempcol;
-        while(row<n && col>=0){
-            if(board.get(row++).charAt(col--)=='Q') return false;
-        }
-        return true;
+    }
+
+    public static void main(String args[]) {
+        solveNQ();
     }
 }
