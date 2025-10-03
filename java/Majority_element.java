@@ -21,6 +21,6 @@ class Solution {
             }
             i++;
         }
-        return null; // Added return to match method signature
+        return null; 
     }
 }
