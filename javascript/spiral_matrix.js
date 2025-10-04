@@ -1,35 +1,41 @@
 let mtrx = [[1, 2, 3, 4],
 [4, 5, 6, 7],
-[7, 8, 9, 10]];
+[7, 8, 9, 10],
+[10,11,12,13]];
 
-let l = 0;
-let t = 0;
-let r = mtrx[0].length;
-let b = mtrx.length;
+let res = [];
 
-let res = []
+let top = 0;
+let bottom = mtrx.length;
+let left = 0;
+let right = mtrx[0].length;
 
-while (l < r && t < b) {
-    for (let i = l; i < r; i++) {
-        res.push(mtrx[t][i]);
+while (top < bottom && left < right) {
+    for (let i = left; i < right; i++) {
+        res.push(mtrx[top][i]);
     }
-    t += 1;
-    for (let i = t; i < b; i++) {
-        res.push(mtrx[i][r - 1]);
-    }
-    r -= 1;
+    top += 1;
 
-    if (t < b) {
-        for (let i = r; i >= l; i--) {
-            res.push(mtrx[b - 1][i]);
+    for (let i = top; i < bottom; i++) {
+        res.push(mtrx[i][right - 1]);
+    }
+    right -= 1;
+
+    if (top < bottom) {
+
+        for (let i = right - 1; i >= left; i--) {
+            res.push(mtrx[bottom - 1][i]);
         }
-        b -= 1;
+        bottom -= 1;
+
     }
-    if(l < r)
-    for (let i = b - 1; i > t - 1; i--) {
-        res.push(mtrx[i][l]);
+
+    if (left < right) {
+        for (let i = bottom - 1; i >= top; i--) {
+            res.push(mtrx[i][left]);
+        }
+        left += 1;
     }
-    l += 1;
 }
 
 console.log(res)
