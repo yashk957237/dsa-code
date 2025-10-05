@@ -1,5 +1,6 @@
 import java.util.*;
-
+import java.util.LinkedList;
+import java.util.Queue;
 /**
 
  * BinaryTree class: Implements generic Binary Tree operations, including
@@ -50,7 +51,7 @@ public class BinaryTree {
             postorder(node.left);
             postorder(node.right);
 
- * Represents a single node in a binary tree.
+ /* Represents a single node in a binary tree.
  */
 class Node {
     int data;
