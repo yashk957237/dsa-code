@@ -1,28 +1,44 @@
 #include <iostream>
 using namespace std;
 
-struct TreeNode {
-    int val;
-    TreeNode* left;
-    TreeNode* right;
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+// Node structure
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+
+    Node(int val) {
+        data = val;
+        left = right = nullptr;
+    }
 };
 
-void postorder(TreeNode* root) {
-    if (!root) return;
-    postorder(root->left);
-    postorder(root->right);
-    cout << root->val << " ";
+// Recursive Postorder Traversal
+void postorderTraversal(Node* root) {
+    if (root == nullptr) return;
+
+    postorderTraversal(root->left);   // Visit left subtree
+    postorderTraversal(root->right);  // Visit right subtree
+    cout << root->data << " ";        // Visit root
 }
 
 int main() {
-    TreeNode* root = new TreeNode(1);
-    root->left = new TreeNode(2);
-    root->right = new TreeNode(3);
-    root->left->left = new TreeNode(4);
-    root->left->right = new TreeNode(5);
+    /*
+            1
+           / \
+          2   3
+         / \
+        4   5
+    */
+
+    Node* root = new Node(1);
+    root->left = new Node(2);
+    root->right = new Node(3);
+    root->left->left = new Node(4);
+    root->left->right = new Node(5);
 
     cout << "Postorder Traversal: ";
-    postorder(root);
+    postorderTraversal(root);
+
     return 0;
 }
