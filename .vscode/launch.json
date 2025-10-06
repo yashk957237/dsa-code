@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CountVowels",
+      "request": "launch",
+      "mainClass": "CountVowels",
+      "projectName": "dsa-code_26e89efe"
+    },
+    {
+      "type": "java",
       "name": "Permutations",
       "request": "launch",
       "mainClass": "Permutations",
