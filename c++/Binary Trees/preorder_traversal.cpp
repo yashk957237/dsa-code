@@ -1,28 +1,44 @@
 #include <iostream>
 using namespace std;
 
-struct TreeNode {
-    int val;
-    TreeNode* left;
-    TreeNode* right;
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+// Node structure
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+
+    Node(int val) {
+        data = val;
+        left = right = nullptr;
+    }
 };
 
-void preorder(TreeNode* root) {
-    if (!root) return;
-    cout << root->val << " ";
-    preorder(root->left);
-    preorder(root->right);
+// Recursive Preorder Traversal
+void preorderTraversal(Node* root) {
+    if (root == nullptr) return;
+
+    cout << root->data << " ";      // Visit root
+    preorderTraversal(root->left);  // Visit left subtree
+    preorderTraversal(root->right); // Visit right subtree
 }
 
 int main() {
-    TreeNode* root = new TreeNode(1);
-    root->left = new TreeNode(2);
-    root->right = new TreeNode(3);
-    root->left->left = new TreeNode(4);
-    root->left->right = new TreeNode(5);
+    /*
+            1
+           / \
+          2   3
+         / \
+        4   5
+    */
+
+    Node* root = new Node(1);
+    root->left = new Node(2);
+    root->right = new Node(3);
+    root->left->left = new Node(4);
+    root->left->right = new Node(5);
 
     cout << "Preorder Traversal: ";
-    preorder(root);
+    preorderTraversal(root);
+
     return 0;
 }
