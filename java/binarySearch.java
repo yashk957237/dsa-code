@@ -1,4 +1,4 @@
-public binarySearch {
+   public class binarySearch{
     public static int binarySearch(int[] arr, int target) {
         int left = 0;
         int right = arr.length - 1;
@@ -29,5 +29,4 @@ public binarySearch {
             System.out.println("Element not found in the array.");
         }
     }
-
-}
+   }
