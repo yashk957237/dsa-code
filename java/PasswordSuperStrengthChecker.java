@@ -5,7 +5,7 @@ import java.util.regex.*;
 
 public class PasswordStrengthChecker {
 
-    // Checkpassword strength and return score
+    // Checkpassword strengh and return score
     public static int checkStrength(String password) {
         int score = 0;
 
@@ -65,7 +65,4 @@ public class PasswordStrengthChecker {
         }
     }
 }
-
-
-
 

@@ -2,6 +2,13 @@
  * A driver class to demonstrate the functionality of BinaryTree and BinarySearchTree.
  */
 public class Main {
+    int data;
+    Node left, right;
+    
+    public void  Node(int data) {
+        this.data = data;
+        this.left = this.right = null;
+    }
     public static void main(String[] args) {
         System.out.println("--- Binary Tree Demonstration ---");
         BinaryTree tree = new BinaryTree();
