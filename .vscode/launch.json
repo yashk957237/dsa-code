@@ -111,8 +111,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/anwes/dsa-code",
-      "program": "c:/Users/anwes/dsa-code/build/Debug/outDebug",
+      "cwd": "c:/Users/ujesh/OneDrive/Documents/blockparty/dsa-code",
+      "program": "c:/Users/ujesh/OneDrive/Documents/blockparty/dsa-code/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
