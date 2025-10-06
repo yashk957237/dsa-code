@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Permutations",
+      "request": "launch",
+      "mainClass": "Permutations",
+      "projectName": "dsa-code_26e89efe"
+    },
+    {
+      "type": "java",
       "name": "LongestSubstring",
       "request": "launch",
       "mainClass": "LongestSubstring",
