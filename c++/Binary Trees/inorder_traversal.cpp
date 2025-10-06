@@ -1,33 +1,44 @@
 #include <iostream>
 using namespace std;
 
-struct TreeNode {
-    int val;
-    TreeNode* left;
-    TreeNode* right;
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+// Node structure for Binary Tree
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+
+    Node(int val) {
+        data = val;
+        left = right = nullptr;
+    }
 };
 
-void inorder(TreeNode* root) {
-    if (!root) return;
-    inorder(root->left);
-    cout << root->val << " ";
-    inorder(root->right);
+// Recursive Inorder Traversal
+void inorderTraversal(Node* root) {
+    if (root == nullptr) return;
+
+    inorderTraversal(root->left);   // Visit left subtree
+    cout << root->data << " ";      // Visit root
+    inorderTraversal(root->right);  // Visit right subtree
 }
 
 int main() {
-    // Sample Tree:       1
-    //                  /   \
-    //                 2     3
-    //                / \
-    //               4   5
-    TreeNode* root = new TreeNode(1);
-    root->left = new TreeNode(2);
-    root->right = new TreeNode(3);
-    root->left->left = new TreeNode(4);
-    root->left->right = new TreeNode(5);
+    /*
+            1
+           / \
+          2   3
+         / \
+        4   5
+    */
+
+    Node* root = new Node(1);
+    root->left = new Node(2);
+    root->right = new Node(3);
+    root->left->left = new Node(4);
+    root->left->right = new Node(5);
 
     cout << "Inorder Traversal: ";
-    inorder(root);
+    inorderTraversal(root);
+
     return 0;
 }
