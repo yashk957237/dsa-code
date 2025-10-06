@@ -1,112 +1,73 @@
-def merge_sort(arr):
+import doctest
+from typing import List, TypeVar
+
+# A generic type for comparable elements
+T = TypeVar('T')
+
+
+def merge_sort(arr: List[T]) -> List[T]:
     """
-    Merge sort algorithm implementation
-    Time Complexity: O(n log n)
-    Space Complexity: O(n)
+    Sorts a list in ascending order using the Merge Sort algorithm.
+
+    This function is not in-place; it returns a new sorted list, leaving
+    the original list unmodified.
+
+    Args:
+        arr: A list of comparable elements.
+
+    Returns:
+        A new list containing the sorted elements.
+
+    Examples:
+    >>> merge_sort([38, 27, 43, 3, 9, 82, 10])
+    [3, 9, 10, 27, 38, 43, 82]
+    >>> merge_sort([])
+    []
+    >>> merge_sort([5])
+    [5]
+    >>> merge_sort([10, 9, 8, 7, 6])
+    [6, 7, 8, 9, 10]
     """
+    # Base case: A list with 0 or 1 element is already sorted
     if len(arr) <= 1:
         return arr
-    
-    # Divide the array into two halves
+
+    # 1. Divide: Find the middle and split the list into two halves
     mid = len(arr) // 2
     left_half = arr[:mid]
     right_half = arr[mid:]
-    
-    # Recursively sort both halves
-    left_sorted = merge_sort(left_half)
-    right_sorted = merge_sort(right_half)
-    
-    # Merge the sorted halves
-    return merge(left_sorted, right_sorted)
 
-def merge(left, right):
-    """
-    Merge two sorted arrays into one sorted array
-    """
-    result = []
-    i = j = 0
-    
-    # Compare elements from both arrays and merge
-    while i < len(left) and j < len(right):
-        if left[i] <= right[j]:
-            result.append(left[i])
-            i += 1
+    # 2. Conquer: Recursively sort both halves
+    sorted_left = merge_sort(left_half)
+    sorted_right = merge_sort(right_half)
+
+    # 3. Combine: Merge the two sorted halves
+    merged_array = []
+    left_pointer, right_pointer = 0, 0
+
+    while left_pointer < len(sorted_left) and right_pointer < len(sorted_right):
+        if sorted_left[left_pointer] < sorted_right[right_pointer]:
+            merged_array.append(sorted_left[left_pointer])
+            left_pointer += 1
         else:
-            result.append(right[j])
-            j += 1
-    
-    # Add remaining elements from left array
-    while i < len(left):
-        result.append(left[i])
-        i += 1
-    
-    # Add remaining elements from right array
-    while j < len(right):
-        result.append(right[j])
-        j += 1
-    
-    return result
+            merged_array.append(sorted_right[right_pointer])
+            right_pointer += 1
 
-def merge_sort_inplace(arr, left=0, right=None):
-    """
-    In-place merge sort implementation
-    """
-    if right is None:
-        right = len(arr) - 1
-    
-    if left < right:
-        mid = (left + right) // 2
-        
-        # Sort first and second halves
-        merge_sort_inplace(arr, left, mid)
-        merge_sort_inplace(arr, mid + 1, right)
-        
-        # Merge the sorted halves
-        merge_inplace(arr, left, mid, right)
+    # Append any remaining elements from the left or right half
+    merged_array.extend(sorted_left[left_pointer:])
+    merged_array.extend(sorted_right[right_pointer:])
 
-def merge_inplace(arr, left, mid, right):
-    """
-    Merge function for in-place merge sort
-    """
-    # Create temporary arrays for left and right subarrays
-    left_arr = arr[left:mid + 1]
-    right_arr = arr[mid + 1:right + 1]
-    
-    i = j = 0
-    k = left
-    
-    # Merge the temporary arrays back into arr[left..right]
-    while i < len(left_arr) and j < len(right_arr):
-        if left_arr[i] <= right_arr[j]:
-            arr[k] = left_arr[i]
-            i += 1
-        else:
-            arr[k] = right_arr[j]
-            j += 1
-        k += 1
-    
-    # Copy remaining elements of left_arr
-    while i < len(left_arr):
-        arr[k] = left_arr[i]
-        i += 1
-        k += 1
-    
-    # Copy remaining elements of right_arr
-    while j < len(right_arr):
-        arr[k] = right_arr[j]
-        j += 1
-        k += 1
+    return merged_array
 
-# Test the functions
+
 if __name__ == "__main__":
-    numbers = [38, 27, 43, 3, 9, 82, 10]
-    print(f"Original array: {numbers}")
-    
-    # Test regular merge sort
-    sorted_numbers = merge_sort(numbers.copy())
-    print(f"Sorted array (merge sort): {sorted_numbers}")
-    
-    # Test in-place merge sort
-    inplace_numbers = numbers.copy()
-    merge_sort_inplace(inplace_numbers)
-    print(f"Sorted array (in-place): {inplace_numbers}")
+    # Run the embedded doctests to verify the function's correctness
+    doctest.testmod()
+
+    # --- Example Usage ---
+    original_list = [38, 27, 43, 3, 9, 82, 10]
+    print(f"Original list: {original_list}")
+
+    sorted_list = merge_sort(original_list)
+    print(f"New sorted list: {sorted_list}")
+    print(f"Original list remains unchanged: {original_list}")
