@@ -1,7 +1,7 @@
 // contributed by Tushar Kumar 
 // GitHub - https://github.com/Tusharkumar200
 
-package Arrays;
+package arrays;
 
 import java.util.HashSet;
 import java.util.Set;
