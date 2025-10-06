@@ -18,6 +18,21 @@
 // Input: costs = [[7,6,2]]
 // Output: 2
 
+/*
+Algorithm Description:
+----------------------
+This solution uses recursion with memoization (top-down dynamic programming) to find the minimum cost to paint all houses such that no two adjacent houses have the same color.
+- For each house, we try all possible colors (red, blue, green) except the color used for the previous house.
+- We recursively compute the minimum cost for each choice and use a memoization table (dp) to avoid recomputation.
+- The recursion starts from the first house with no previous color (-1).
+
+Complexity Analysis:
+--------------------
+Let n be the number of houses.
+- Time Complexity: O(n * 3), since for each house and each color, we compute the result once and memoize it.
+- Space Complexity: O(n * 3) for the memoization table.
+*/
+
 package dynamic_programming.PaintHouse;
 
 import java.util.Arrays;
