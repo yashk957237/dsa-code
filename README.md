@@ -4,7 +4,6 @@ Welcome to **DSA-Code** 🎉
 A community-driven repository of **Data Structures and Algorithms (DSA)** solutions implemented in multiple programming languages.  
 The goal of this project is to help learners and contributors **explore, practice, and enhance** their problem-solving skills in DSA.  
 
----
 
 ## 📑 Table of Contents  
 - [🚀 Features](#-features)  
@@ -61,6 +60,20 @@ git checkout -b feature-branch-name
 - Ensure proper file naming and comments for clarity.
 
 ### 5️⃣ Commit and Push Changes
+### 3️⃣ Create a branch
+
+```bash
+git checkout -b feature-branch-name
+```
+
+### 4️⃣ Add your code
+
+* Navigate to the correct language folder (e.g., `Python/`, `Java/`)
+* Add your DSA problem solution file
+* Ensure proper file naming and comments for readability
+
+### 5️⃣ Commit and push changes
+
 ```bash
 git add .
 git commit -m "Added solution for <problem-name> in <language>"
