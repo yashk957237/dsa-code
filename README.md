@@ -13,6 +13,9 @@ The goal of this repo is to help learners and contributors **explore, practice, 
 * 💪 Perfect for **Hacktoberfest**, **coding practice**, and **interview preparation**
 * 📂 Each folder contains DSA problems and solutions in the respective programming language
 
+Comprehensive DSA Roadmap to guide your learning journey. [View Roadmap](./roadmap/DSA%20Road%20Map%20Basic%20to%20Advance.md)
+
+Open-source project: everyone is welcome to contribute.
 
 ## 🤝 How to Contribute
 
