@@ -4,7 +4,7 @@ import java.util.Scanner;
 /**
  * A class containing the implementation of the Bubble Sort algorithm.
  */
-public class bubbleSort {
+public class BubbleSort {
 
     /**
      * Sorts an array using the bubble sort algorithm.
