@@ -4,6 +4,7 @@ public class BubbleSort_ascending
 {
     public static void main(String args[])
     {
+        
         Scanner sc = new Scanner(System.in);   // Create Scanner object for user input
         int i = 0, j = 0, temp = 0;            // Declare loop variables and temporary variable for swapping
         int a[] = new int[5];                  // Declare an integer array of size 5
