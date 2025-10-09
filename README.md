@@ -1,8 +1,8 @@
-# 📘 DSA-Code
+# 📘 DSA-Code  
 
-Welcome to **DSA-Code** 🎉
-This repository is a collection of **Data Structures and Algorithms (DSA)** solutions implemented in multiple programming languages.
-The goal of this repo is to help learners and contributors **explore, practice, and improve** their problem-solving skills in DSA.
+Welcome to **DSA-Code** 🎉  
+A community-driven repository of **Data Structures and Algorithms (DSA)** solutions implemented in multiple programming languages.  
+The goal of this project is to help learners and contributors **explore, practice, and enhance** their problem-solving skills in DSA.  
 
 ## 🚀 Features
 
@@ -14,7 +14,7 @@ The goal of this repo is to help learners and contributors **explore, practice, 
 
 ## 🤝 How to Contribute
 
-We ❤️ contributions! Follow these simple steps to contribute:
+---
 
 ### 1️⃣ Fork the repo
 Click the **Fork** button (top right of this repository) to create your own copy.
