@@ -46,6 +46,7 @@ Click the **Fork** button (top-right) to create your own copy.
 
 ### 2️⃣ Clone Your Fork  
 
+### 2️⃣ Clone Your Fork  
 ```bash
 git clone https://github.com/<your-username>/dsa-code.git
 cd dsa-code
