@@ -1,4 +1,3 @@
-
 # 📘 DSA-Code  
 
 Welcome to **DSA-Code** 🎉  
@@ -19,7 +18,6 @@ The goal of this project is to help learners and contributors **explore, practic
 
 ---
 
-
 ## 🚀 Features  
 - 💡 Solutions in multiple languages — *C, C++, Python, Java, JavaScript,* and more.  
 - 🧑‍💻 Beginner-friendly problem statements with clear, structured solutions.  
@@ -28,7 +26,6 @@ The goal of this project is to help learners and contributors **explore, practic
 - 🧩 Each folder contains DSA problems and solutions for the respective programming language.  
 
 ---
-
 
 ## 🧭 DSA Roadmap  
 Follow our step-by-step roadmap to master DSA concepts from **Basic to Advanced** 👇  
@@ -45,13 +42,10 @@ Follow these steps to add your solutions:
 Click the **Fork** button (top-right) to create your own copy.  
 
 ### 2️⃣ Clone Your Fork  
-
-### 2️⃣ Clone Your Fork  
 ```bash
 git clone https://github.com/<your-username>/dsa-code.git
 cd dsa-code
 ```
-
 
 ### 3️⃣ Create a New Branch
 ```bash
@@ -67,13 +61,11 @@ git checkout -b feature-branch-name
 - Ensure proper file naming and comments for clarity.
 
 ### 5️⃣ Commit and Push Changes
-
 ```bash
 git add .
 git commit -m "Added solution for <problem-name> in <language>"
 git push origin feature-branch-name
 ```
-
 
 ### 6️⃣ Create a Pull Request
 
@@ -98,9 +90,7 @@ git push origin feature-branch-name
 
 ### 📢 Join Our Community
 
-
 Be a part of our growing community 🌱 — learn, code, and grow together!
-
 
 - 💬 Join on Discord
 
@@ -132,4 +122,3 @@ If you love this project and want to support future development, consider buying
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/ghostmkg/dsa-code?style=for-the-badge)  
 ![GitHub license](https://img.shields.io/github/license/ghostmkg/dsa-code?style=for-the-badge)  
 ![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=for-the-badge)  
-
