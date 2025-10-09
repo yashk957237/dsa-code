@@ -23,7 +23,7 @@ Follow our step-by-step roadmap to master DSA concepts from **Basic to Advanced*
 
 ## 🤝 How to Contribute  
 
-We ❤️ contributions! Follow these simple steps to contribute:
+---
 
 ### 1️⃣ Fork the Repository  
 Click the **Fork** button (top-right) to create your own copy.  
