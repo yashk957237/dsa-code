@@ -32,7 +32,7 @@ public class MergeSort{
         int j=0;
         int k=left;
 
-        while(i<n1 && j<n2){
+        do{
             if(leftArray[i]<=rightArray[j]){
                 arr[k] = leftArray[i];
                 i++;
@@ -42,19 +42,19 @@ public class MergeSort{
                 j++;
             }
             k++;
-        }
+        }while(i<n1 && j<n2);
 
-        while(i<n1){
+        do{
             arr[k] = leftArray[i];
             i++;
             k++;
-        }
+        }while(i<n1);
 
-        while(j<n2){
+        do{
             arr[k] = rightArray[j];
             j++;
             k++;
-        }
+        }while(j<n2);
     }
 
     public static void main(String[] args){
