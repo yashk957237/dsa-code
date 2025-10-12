@@ -3,17 +3,45 @@
   "configurations": [
     {
       "type": "java",
-      "name": "factorial_number",
+      "name": "CountVowels",
       "request": "launch",
-      "mainClass": "factorial_number",
-      "projectName": "dsa-code_7f39e1df"
+      "mainClass": "CountVowels",
+      "projectName": "dsa-code_26e89efe"
     },
     {
       "type": "java",
-      "name": "Factorial",
+      "name": "Permutations",
       "request": "launch",
-      "mainClass": "Factorial",
-      "projectName": "dsa-code_7f39e1df"
+      "mainClass": "Permutations",
+      "projectName": "dsa-code_26e89efe"
+    },
+    {
+      "type": "java",
+      "name": "LongestSubstring",
+      "request": "launch",
+      "mainClass": "LongestSubstring",
+      "projectName": "dsa-code_26e89efe"
+    },
+    {
+      "type": "java",
+      "name": "MaximumSubarray",
+      "request": "launch",
+      "mainClass": "MaximumSubarray",
+      "projectName": "dsa-code_26e89efe"
+    },
+    {
+      "type": "java",
+      "name": "mergeTwoLists",
+      "request": "launch",
+      "mainClass": "mergeTwoLists",
+      "projectName": "dsa-code_26e89efe"
+    },
+    {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "Main",
+      "projectName": "dsa-code_26e89efe"
     },
     {
       "name": "Java",
