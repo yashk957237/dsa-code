@@ -3,6 +3,17 @@
   "configurations": [
     {
       "type": "java",
+      "name": "JobScheduling1",
+      "request": "launch",
+      "mainClass": "JobScheduling1",
+      "projectName": "dsa-code_163e7579"
+    },
+    {
+      "type": "java",
+      "name": "JobScheduling",
+      "request": "launch",
+      "mainClass": "JobScheduling",
+      "projectName": "dsa-code_163e7579"
       "name": "CountVowels",
       "request": "launch",
       "mainClass": "CountVowels",
