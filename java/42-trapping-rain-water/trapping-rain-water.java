@@ -29,6 +29,21 @@ class Solution {
     }
 }
 
+/* =====================================================================================================================
+                    TIME COMPLEXITY ANALYSIS FOR THE ABOVE CODE:
+
+ The time complexity of the above code is O(n) where n = height.length.
+
+ Explanation : The condition "while(l < r)" loop runs once for each element in the array. So, each element is processed atmost once
+=======================================================================================================================
+
+                    SPACE COMPLEXITY ANALYSIS FOR THE ABOVE CODE :
+
+The space complexity of the above code is O(1) and I say that because the extra space is being used only by the variables (l, r, lmax, rmax, water) and no additional Data Structures and being used.
+========================================================================================================================
+*/
+
+
 /************************************************ */
 /*          Solution 2 Using arrays               */
 /************************************************ */
@@ -55,9 +70,33 @@ class Solution {
 //     }
 // }
 
+/* =====================================================================================================================
+                    TIME COMPLEXITY ANALYSIS FOR THE ABOVE CODE:
+
+Explanation : As this code consists of traverising the array multiple times, let's go step by step:
+First loop : It is calculating the values for left max array and the loop runs n-1 times (Time complexity : O(n)).
+Second loop : It is calulating the values for the right max array and the lop runs n-1 times (Time complexity : O(n)).
+Third loop : It is calculating the overall final value (final trapped water) and it runs n times (Time complexity : O(n)).
+
+where is n = height.length.
+
+Overall Time complexity : O(n) + O(n) + O(n) = O(n).
+ 
+=======================================================================================================================
+
+                    SPACE COMPLEXITY ANALYSIS FOR THE ABOVE CODE :
+Explanation : The array leftmax and rightmax are of size n. So, O(n) + O(n) = O(2n). 
+Also, there are few more variables being used like : water, i etc. 
+
+Total Space Complexity : O(2n) => simplifies to O(n).
+
+
+========================================================================================================================
+*/
+
 
 /************************************************ */
-/*          Solution 3 Using stack                */
+/*          Solution 2 Using stacks               */
 /************************************************ */
 
 
@@ -99,3 +138,38 @@ class Solution {
 //         return water;
 //     }
 // }
+
+
+/* =====================================================================================================================
+                    TIME COMPLEXITY ANALYSIS FOR THE ABOVE CODE:
+
+Explanation : As the code looks little bulky, let's analyze the time complexity of the above code step by step : 
+First while loop :
+-> It runs once for each element i in height array.
+-> The inner  loop "while(!st.isEmpty())" pops elements from the stack. 
+
+Second while loop : 
+-> It processes the remaining elements in "st" and moves them into "st2".
+-> Again, each element is pushed and popped at most once across both stacks. 
+
+
+Thus, even though there are nested loops, each element is processed a constant number of times.
+
+Time Complexity : O(n)
+ 
+=======================================================================================================================
+
+                    SPACE COMPLEXITY ANALYSIS FOR THE ABOVE CODE :
+Explanation : 
+                        Stack<Integer> st = new Stack<>();
+                        Stack<Integer> st2 = new Stack<>();
+
+The above 2 lines in the code, the stack uses upto n elements. 
+The second stack uses upto n elements.
+-> Here too, few constant variables are being used (like baseHeight, water etc).
+
+Overall Space Complexity : O(n).
+
+
+========================================================================================================================
+*/
