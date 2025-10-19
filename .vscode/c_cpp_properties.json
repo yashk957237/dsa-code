@@ -1,7 +1,7 @@
 {
   "configurations": [
     {
-      "name": "macos-gcc-arm64",
+      "name": "windows-gcc-x64",
       "includePath": [
         "${workspaceFolder}/**"
       ],
@@ -10,10 +10,10 @@
         "UNICODE",
         "_UNICODE"
       ],
-      "compilerPath": "/usr/bin/gcc",
+      "compilerPath": "C:/MinGW/mingw32/bin/gcc.exe",
       "cStandard": "${default}",
       "cppStandard": "${default}",
-      "intelliSenseMode": "macos-gcc-arm64"
+      "intelliSenseMode": "windows-gcc-x64"
     }
   ],
   "version": 4
