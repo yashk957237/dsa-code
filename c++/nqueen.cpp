@@ -1,79 +1,70 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
-#include <set>
-
+#include <string>
 using namespace std;
 
 class Solution {
 public:
-    vector<vector<int>> threeSum(vector<int>& nums) {
-        sort(nums.begin(), nums.end());
-        
-        vector<vector<int>> result;
-        int n = nums.size();
+    vector<vector<string>> solveNQueens(int n) {
+        vector<vector<string>> res;
+        vector<string> board(n, string(n, '.'));
+        vector<int> leftRow(n, 0), upperDiag(2*n - 1, 0), lowerDiag(2*n - 1, 0);
+        solve(0, board, res, leftRow, upperDiag, lowerDiag, n);
+        return res;
+    }
 
-        for (int i = 0; i < n - 2; ++i) {
-            if (i > 0 && nums[i] == nums[i - 1]) {
-                continue;
-            }
-
-            int target = -nums[i];
-            
-            int left = i + 1;
-            int right = n - 1;
-
-            while (left < right) {
-                int sum = nums[left] + nums[right];
-
-                if (sum == target) {
-                    result.push_back({nums[i], nums[left], nums[right]});
-
-                    int current_left_val = nums[left];
-                    int current_right_val = nums[right];
-                    
-                    while (left < right && nums[left] == current_left_val) {
-                        left++;
-                    }
-                    while (left < right && nums[right] == current_right_val) {
-                        right--;
-                    }
-                } else if (sum < target) {
-                    left++;
-                } else {
-                    right--;
-                }
-            }
+private:
+    void solve(int col, vector<string> &board, vector<vector<string>> &res,
+               vector<int> &leftRow, vector<int> &upperDiag, vector<int> &lowerDiag, int n) {
+        if (col == n) {
+            res.push_back(board);
+            return;
         }
 
-        return result;
+        for (int row = 0; row < n; row++) {
+            if (leftRow[row] == 0 && lowerDiag[row + col] == 0 && upperDiag[row - col + n - 1] == 0) {
+                board[row][col] = 'Q';
+                leftRow[row] = 1;
+                lowerDiag[row + col] = 1;
+                upperDiag[row - col + n - 1] = 1;
+
+                solve(col + 1, board, res, leftRow, upperDiag, lowerDiag, n);
+
+                // Backtrack
+                board[row][col] = '.';
+                leftRow[row] = 0;
+                lowerDiag[row + col] = 0;
+                upperDiag[row - col + n - 1] = 0;
+            }
+        }
     }
 };
 
 int main() {
-    Solution s;
+    Solution sol;
+    int n;
+    cout << "Enter the value of N: ";
+    cin >> n;
+
+    if (n < 1) {
+        cout << "N must be at least 1\n";
+        return 1;
+    }
+
+    vector<vector<string>> solutions = sol.solveNQueens(n);
+
+    cout << "\nNumber of solutions: " << solutions.size() << "\n\n";
     
-    vector<int> nums1 = {-1, 0, 1, 2, -1, -4};
-    vector<vector<int>> result1 = s.threeSum(nums1);
-    cout << "Triplets for [-1, 0, 1, 2, -1, -4]:" << endl;
-    for (const auto& triplet : result1) {
-        cout << "[" << triplet[0] << ", " << triplet[1] << ", " << triplet[2] << "]" << endl;
-    }
-    cout << "---" << endl;
-
-    vector<int> nums2 = {0, 0, 0};
-    vector<vector<int>> result2 = s.threeSum(nums2);
-    cout << "Triplets for [0, 0, 0]:" << endl;
-    for (const auto& triplet : result2) {
-        cout << "[" << triplet[0] << ", " << triplet[1] << ", " << triplet[2] << "]" << endl;
-    }
-    cout << "---" << endl;
-
-    vector<int> nums3 = {-2, 0, 1, 1, 2};
-    vector<vector<int>> result3 = s.threeSum(nums3);
-    cout << "Triplets for [-2, 0, 1, 1, 2]:" << endl;
-    for (const auto& triplet : result3) {
-        cout << "[" << triplet[0] << ", " << triplet[1] << ", " << triplet[2] << "]" << endl;
+    if (solutions.empty()) {
+        cout << "No solutions exist for N = " << n << "\n";
+    } else {
+        for (int i = 0; i < solutions.size(); i++) {
+            cout << "Solution " << (i + 1) << ":\n";
+            for (auto &row : solutions[i]) {
+                cout << row << "\n";
+            }
+            cout << "\n";
+        }
     }
     
     return 0;
