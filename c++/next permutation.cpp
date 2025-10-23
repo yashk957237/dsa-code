@@ -26,7 +26,7 @@ public:
             swap(arr[i], arr[j]);
         }
 
-        // reverse the part of the array after the pivot's original position
+        // When original position of pivot is found revert the part of the array after the pivot
         // If no pivot was found, this reverses the whole array to the smallest permutation.
         reverse(arr.begin() + i + 1, arr.end());
     }
